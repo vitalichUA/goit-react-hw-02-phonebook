@@ -39,10 +39,10 @@ export const PrimaryButton = styled.button`
   align-items: center;
   padding: 5px 0;
   border: none;
-  background-color: ${p => p.theme.colors.primary};
   cursor: pointer;
 
     &:hover {
         color: ${p => p.theme.colors.white};
+        background-color: ${p => p.theme.colors.primary};
     }
 `;
