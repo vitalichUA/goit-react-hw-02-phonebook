@@ -51,7 +51,9 @@ export class MyForm extends Component {
                                     onChange={props.handleChange}
                                     value={props.values.name}
                                 />
-                                <ErrorMessage name="name" render={msg => <ErrorText>{msg}</ErrorText>}/>
+                                <ErrorMessage
+                                    name="name" render={msg =>
+                                        <ErrorText>{msg}</ErrorText>} />
                             </ContactLabel>
                             <ContactLabel>
                                 Number:

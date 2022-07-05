@@ -12,15 +12,8 @@ export const ContactsItem = styled.li`
 
 export const ContactsButton = styled.button`
     padding: 4px;
-    border: none;
-    border-radius: ${p => p.theme.radii.normal} ;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-
-    :hover {
-        color: ${p => p.theme.colors.accent};
-    }
-    
 `;

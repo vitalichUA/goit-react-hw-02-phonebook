@@ -16,21 +16,14 @@ export const ContactLabel = styled.label`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 16rem;
   margin-bottom: 20px;
 
 `;
 
 export const ContactField = styled(Field)`
-  box-sizing: border-box;
   min-width: 300px;
   padding-left: 20px;
   height: 40px;
-  font-family: inherit;
-
-  outline: none;
-  border-radius: .5rem;
-
 `;
 
 export const ErrorText = styled.p`
@@ -46,11 +39,8 @@ export const PrimaryButton = styled.button`
   align-items: center;
   padding: 5px 0;
   border: none;
-  border-radius: 0.5rem;
-  text-transform: uppercase;
   background-color: ${p => p.theme.colors.primary};
   cursor: pointer;
-
 
     &:hover {
         color: ${p => p.theme.colors.white};

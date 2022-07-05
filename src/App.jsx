@@ -1,6 +1,7 @@
 import 'modern-normalize';
 import { Component } from "react";
-import { Container, Title } from './components/ui/common.styled';
+import { Container} from './components/ui/Container.styled';
+import { Title } from 'components/ui/Title.styled';
 import { MyForm } from './components/Form/Form';
 import { Filter } from './components/Filter/Filter';
 import { ContactsList } from './components/ContactsList/ContactsList';
