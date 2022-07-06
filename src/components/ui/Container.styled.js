@@ -9,9 +9,3 @@ export const Container = styled.div`
     padding: 30px;
 `;
 
-export const Title = styled.h2`
-    margin-bottom: 10px;
-    font-weight: ${p => p.theme.fontWeights.normal};
-`;
-
-

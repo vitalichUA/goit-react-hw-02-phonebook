@@ -30,36 +30,29 @@ export class App extends Component {
   }
 
   deleteContact = (contactId) => {
-    this.setState((prevState) => {
-      return {
+    this.setState((prevState) => ({
         contacts: prevState.contacts.filter((contact) => contact.id !== contactId)
-      }
-    })
+    }))
   }
 
   handlerSubmit = (data) => {
     if (this.validateContact(data)) {
       alert(`${data.name} already exist`);
     } else {
-      this.setState((prevState) => {
-        return {
+      this.setState((prevState) => ({
           contacts: [...prevState.contacts, data],
-        }
-      })
+      }))
     }
   }
 
   render() {
-    return  <Container>
-              <Title>Contact App</Title>
-                <MyForm onSubmit={this.handlerSubmit} />
-              <Title>Search by name</Title>
-                <Filter value={this.state.filter} onChange={this.handlerFilter} />
-                <ContactsList
-                value={this.state.filter}
-                options={this.state.contacts}
-                onClickDelete={this.deleteContact}
-              />
-            </Container>
+    return (
+      <Container>
+        <Title>Contact App</Title>
+        <MyForm onSubmit={this.handlerSubmit} />
+        <Title>Search by name</Title>
+        <Filter value={this.state.filter} onChange={this.handlerFilter} />
+        <ContactsList value={this.state.filter} options={this.state.contacts} onClickDelete={this.deleteContact}/>
+      </Container>)
   }
 }

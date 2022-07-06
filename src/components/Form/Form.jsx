@@ -7,13 +7,9 @@ import * as yup from 'yup';
 const mySchema = yup.object().shape({
     name: yup.string().min(2).required(),
     number: yup.string().length(7).required(),
-  });
+  })
 
 export class MyForm extends Component {
-    state = {
-        name: '',
-        number: '',
-    }
 
     normalizedNumber = (str) => {
         const normalizedNumber = str[0] + str[1] + str[2] + '-' + str[3] + str[4] + '-' + str[5] + str[6];
@@ -36,41 +32,26 @@ export class MyForm extends Component {
     }
 
     render() {
-        return  <Formik
-                    initialValues={this.state}
-                    validationSchema={mySchema}
-                    onSubmit={this.hadleSubmit}
-                    >
-                    {props => (
-                        <ContactForm>
-                            <ContactLabel>
-                                Name:
-                                <ContactField
-                                    type="text"
-                                    name="name"
-                                    onChange={props.handleChange}
-                                    value={props.values.name}
-                                />
-                                <ErrorMessage
-                                    name="name" render={msg =>
-                                        <ErrorText>{msg}</ErrorText>} />
-                            </ContactLabel>
-                            <ContactLabel>
-                                Number:
-                                <ContactField
-                                    type="tel"
-                                    name="number"
-                                    onChange={props.handleChange}
-                                    value={props.values.number}
-                                />
-                                <ErrorMessage name="number" render={msg => <ErrorText>{msg}</ErrorText>}/>
-                            </ContactLabel>
-                            <PrimaryButton type="submit">
-                                
-                                Add contact
-                            </PrimaryButton>
-                        </ContactForm>
+        return (
+            <Formik initialValues={{name: '', number: ''}} validationSchema={mySchema} onSubmit={this.hadleSubmit}>
+                {props => (
+                    <ContactForm>
+                        <ContactLabel>
+                            Name:
+                        <ContactField type="text" name="name" onChange={props.handleChange} value={props.values.name}/>
+                            <ErrorMessage name="name" render={msg => <ErrorText>{msg}</ErrorText>} />
+                        </ContactLabel>
+                        <ContactLabel>
+                            Number:
+                            <ContactField type="tel" name="number" onChange={props.handleChange} value={props.values.number}/>
+                            <ErrorMessage name="number" render={msg => <ErrorText>{msg}</ErrorText>}/>
+                        </ContactLabel>
+                        <PrimaryButton type="submit">
+                            Add contact
+                        </PrimaryButton>
+                    </ContactForm>
                     )}
-                </Formik>
+            </Formik>
+        )
     }
 }

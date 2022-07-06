@@ -6,17 +6,18 @@ export const ContactsList = ({ value, options, onClickDelete }) => {
   const normalizeValue = value.toLowerCase();
   const filteredArray = options.filter((option) => option.name.toLowerCase().includes(normalizeValue));
 
-  return  <ul>
-            {filteredArray.map(({id, name, number}) => {
-              return (
-                <ContactsItem key={id}>
-                {name}: {number}
-                <ContactsButton onClick={() => { onClickDelete(id) }}>
+  return (
+    <ul>
+      {filteredArray.map(({id, name, number}) => {
+        return (
+          <ContactsItem key={id}>
+            {name}: {number}
+            <ContactsButton onClick={() => { onClickDelete(id) }}>
                   Delete
-                </ContactsButton>
-              </ContactsItem>)
-            })}
-          </ul>
+              </ContactsButton>
+          </ContactsItem>)
+             })}
+      </ul>)
 }
 
 ContactsList.propTypes = {
