@@ -38,7 +38,7 @@ export class MyForm extends Component {
                     <ContactForm>
                         <ContactLabel>
                             Name:
-                        <ContactField type="text" name="name" onChange={props.handleChange} value={props.values.name}/>
+                            <ContactField type="text" name="name" onChange={props.handleChange} value={props.values.name}/>
                             <ErrorMessage name="name" render={msg => <ErrorText>{msg}</ErrorText>} />
                         </ContactLabel>
                         <ContactLabel>

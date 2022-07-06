@@ -13,8 +13,8 @@ export const ContactsList = ({ value, options, onClickDelete }) => {
           <ContactsItem key={id}>
             {name}: {number}
             <ContactsButton onClick={() => { onClickDelete(id) }}>
-                  Delete
-              </ContactsButton>
+                Delete
+            </ContactsButton>
           </ContactsItem>)
              })}
       </ul>)
